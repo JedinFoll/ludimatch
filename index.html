@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jediñ Foll — Boutique</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #2ec4b6; color: #fff; }
+    header, footer { text-align: center; padding: 1rem; background: #1a1a1a; }
+    main { max-width: 900px; margin: auto; padding: 1rem; }
+    .card { background: #1a1a1a; border-radius: 20px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+    h1, h2, h3 { color: #2ec4b6; }
+    .price { font-size: 1.8rem; font-weight: bold; margin: 1rem 0; }
+    .btn { display: inline-block; padding: 0.8rem 1.2rem; border-radius: 10px; background: linear-gradient(90deg, #00b4d8, #ffcb77); color: #000; font-weight: bold; text-decoration: none; }
+    .btn.secondary { background: linear-gradient(90deg, #9d4edd, #ffcb77); color: #000; }
+    .qr { text-align: center; margin-top: 2rem; }
+    ul { line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jediñ Foll</h1>
+    <p>Le jeu de cartes éducatif, drôle et stratégique</p>
+  </header>
+  <main>
+    <div class="card">
+      <h2>Boîte Jediñ Foll — Édition Classique</h2>
+      <ul>
+        <li>1–4 joueurs · 10–30 minutes</li>
+        <li>dès 6 ans</li>
+        <li>Objectifs selon le mode : 20, 35, 50 ou 100</li>
+        <li>102 cartes (nombres, opérations, actions)</li>
+      </ul>
+      <div class="price">14,99 €</div>
+      <a href="https://www.paypal.com/ncp/payment/AFCR5XL2VSGK8" class="btn">Acheter France / Europe</a>
+      <a href="https://www.paypal.com/ncp/payment/PYMYEBRDT5WUE" class="btn secondary" style="margin-left:10px;">Acheter DOM/TOM</a>
+      <p style="margin-top:1rem; font-size:0.9rem; color:#ccc;">Livraison sous 15 jours ouvrés</p>
+    </div>
+
+    <div class="card" style="margin-top:2rem;">
+      <h2>QR Code</h2>
+      <p>Scannez pour accéder directement au site :</p>
+      <div class="qr">
+        <a href="https://api.qrserver.com/v1/create-qr-code/?size=2000x2000&data=https://jedinfoll.github.io/jedinfoll/" download>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https://jedinfoll.github.io/jedinfoll/" alt="QR Code vers Jediñ Foll" style="max-width:300px;">
+        </a>
+      </div>
+      <p style="font-size:0.9rem; color:#ccc;">Cliquez sur le QR code pour télécharger en haute définition (PNG).</p>
+    </div>
+  </main>
+  <footer>
+    © 2025 Jediñ Foll — Tous droits réservés.
+  </footer>
+</body>
+</html>
