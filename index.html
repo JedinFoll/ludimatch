@@ -1,55 +1,1138 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jediñ Foll — Boutique</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jediñ Foll (Jedin Foll) — Jeu de cartes éducatif, drôle et stratégique</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Jediñ Foll (Jedin Foll) — le jeu de cartes éducatif, drôle et stratégique au format de poche. 1 à 4 joueurs, 10 à 30 min, 6 modes de jeu. Commande 14,99 €.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="https://jedinfoll.github.io/jedinfoll/">
+  <link rel="alternate" hreflang="fr" href="https://jedinfoll.github.io/jedinfoll/">
+  <link rel="alternate" hreflang="en" href="https://jedinfoll.github.io/jedinfoll/index-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://jedinfoll.github.io/jedinfoll/">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jediñ Foll">
+  <meta property="og:title" content="Jediñ Foll (Jedin Foll) — Jeu de cartes éducatif, drôle et stratégique">
+  <meta property="og:description" content="Le pocket game qui fait tourner les méninges ! 1–4 joueurs, 10–30 min. Commande 14,99 €.">
+  <meta property="og:url" content="https://jedinfoll.github.io/jedinfoll/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/jedinfoll/jedinfoll/main/photo-jedinfoll.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- JSON-LD Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Jediñ Foll",
+    "alternateName": "Jedin Foll",
+    "description": "Jeu de cartes éducatif, drôle et stratégique. 1 à 4 joueurs, 10–30 min, 6 modes de jeu.",
+    "image": "https://raw.githubusercontent.com/jedinfoll/jedinfoll/main/photo-jedinfoll.png",
+    "brand": { "@type": "Brand", "name": "Jediñ Foll" },
+    "offers": [{
+      "@type": "Offer",
+      "url": "https://jedinfoll.github.io/jedinfoll/",
+      "priceCurrency": "EUR",
+      "price": "14.99",
+      "availability": "https://schema.org/InStock",
+      "seller": { "@type": "Organization", "name": "Jediñ Foll" }
+    }]
+  }
+  </script>
+
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #2ec4b6; color: #fff; }
-    header, footer { text-align: center; padding: 1rem; background: #1a1a1a; }
-    main { max-width: 900px; margin: auto; padding: 1rem; }
-    .card { background: #1a1a1a; border-radius: 20px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
-    h1, h2, h3 { color: #2ec4b6; }
-    .price { font-size: 1.8rem; font-weight: bold; margin: 1rem 0; }
-    .btn { display: inline-block; padding: 0.8rem 1.2rem; border-radius: 10px; background: linear-gradient(90deg, #00b4d8, #ffcb77); color: #000; font-weight: bold; text-decoration: none; }
-    .btn.secondary { background: linear-gradient(90deg, #9d4edd, #ffcb77); color: #000; }
-    .qr { text-align: center; margin-top: 2rem; }
-    ul { line-height: 1.6; }
+    :root{--mint:#2ec4b6;--bg:#1a1a1a}
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background-color:var(--mint);
+      color:#fff;
+    }
+
+  header{
+  text-align:center;
+  padding:.6rem 1rem;
+  background:var(--bg);
+}
+
+footer{
+  text-align:center;
+  padding:1rem;
+  background:var(--bg);
+}
+
+    main{
+      max-width:900px;
+      margin:auto;
+      padding:1rem;
+    }
+
+   .topbar{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  width:100%;
+}
+
+    .lang{font-weight:bold}
+
+    .lang a{
+      color:#ffcb77;
+      text-decoration:none;
+      margin-left:.5rem;
+    }
+
+    .card{
+      background:var(--bg);
+      border-radius:20px;
+      padding:1.5rem;
+      box-shadow:0 4px 12px rgba(0,0,0,.5);
+      margin:1rem auto 2rem;
+    }
+
+    h1{
+      color:#fff;
+      margin:0 0 .5rem;
+      font-size:3rem;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    h2{color:var(--mint)}
+
+    /* ===== PRÉSENTATION JEDIÑ FOLL ===== */
+
+    .presentation-card{
+      text-align:center;
+    }
+
+    .presentation-title{
+      color:var(--mint);
+      font-size:4rem;
+      font-weight:800;
+      line-height:1.05;
+      margin:0 0 .6rem;
+    }
+
+    .presentation-subtitle{
+      color:#fff;
+      font-size:1.2rem;
+      line-height:1.4;
+      margin:0 auto 1.5rem;
+    }
+
+    .presentation-photo{
+      width:100%;
+      max-width:820px;
+      display:block;
+      margin:0 auto;
+      border-radius:15px;
+    }
+
+    .presentation-infos{
+      width:100%;
+      max-width:820px;
+      margin:1.5rem auto 0;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+      align-items:start;
+      text-align:center;
+    }
+
+    .presentation-info{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      line-height:1.35;
+    }
+
+    .presentation-icon{
+      font-size:2rem;
+      margin-bottom:.4rem;
+    }
+
+    .presentation-info strong{
+      font-size:1.05rem;
+    }
+
+    .presentation-info span{
+      font-size:.9rem;
+    }
+
+    /* ===== COMMANDE ===== */
+
+    .price{
+      font-size:1.8rem;
+      font-weight:bold;
+      margin:1rem 0;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:.8rem 1.2rem;
+      border-radius:10px;
+      background:linear-gradient(90deg,#00b4d8,#ffcb77);
+      color:#000;
+      font-weight:bold;
+      text-decoration:none;
+      transition:transform .2s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+    }
+
+    .btn img.flag{
+      height:16px;
+      border-radius:2px;
+      border:1px solid #333;
+    }
+
+    .social-links a{
+      color:var(--mint);
+      text-decoration:none;
+      margin:0 10px;
+      font-weight:bold;
+    }
+
+    .mentions{
+      font-size:.95rem;
+      color:#ddd;
+      margin-top:1rem;
+      text-align:left;
+      line-height:1.55;
+    }
+
+    .flags-inline{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .flag{
+      height:16px;
+      border-radius:2px;
+      border:1px solid #333;
+    }
+
+    .small{
+      color:#bbb;
+      font-size:.9rem;
+    }
+
+    ul{
+      padding-left:1.2rem;
+    }
+
+    .pdf-frame{
+      width:100%;
+      aspect-ratio:1/1.414;
+      max-height:80vh;
+      border:0;
+      background:#fff;
+    }
+
+    .dropdown-commande{
+      position:relative;
+      display:inline-block;
+    }
+
+    .menu-commande{
+      display:none;
+      position:absolute;
+      top:110%;
+      left:0;
+      background:#1a1a1a;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 8px 20px rgba(0,0,0,.6);
+      z-index:1000;
+      min-width:300px;
+    }
+
+    .menu-commande a{
+      display:block;
+      padding:12px;
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
+      border-bottom:1px solid #333;
+    }
+
+    .menu-commande a:hover{
+      background:linear-gradient(90deg,#00b4d8,#ffcb77);
+      color:#000;
+    }
+
+    /* ===== TÉLÉPHONE ===== */
+
+    @media (max-width:600px){
+
+      .pdf-frame{
+        aspect-ratio:auto;
+        height:70vh;
+      }
+
+      h1{
+        font-size:2.3rem;
+      }
+
+      .presentation-title{
+        font-size:2.8rem;
+      }
+
+      .presentation-subtitle{
+        font-size:1rem;
+      }
+
+      .presentation-infos{
+        grid-template-columns:repeat(2,1fr);
+        gap:22px 12px;
+      }
+
+      .presentation-info strong{
+        font-size:1rem;
+      }
+
+      .presentation-info span{
+        font-size:.85rem;
+      }
+
+      .presentation-icon{
+        font-size:1.8rem;
+      }
+    }
+
+    @media print{
+      body{background:#fff;color:#000}
+      header,footer,.card:not(#rules){display:none!important}
+      #rules{box-shadow:none;border:none;background:#fff;color:#000}
+      #rules h2{color:#000}
+    }
   </style>
 </head>
+
 <body>
+
   <header>
-    <h1>Jediñ Foll</h1>
-    <p>Le jeu de cartes éducatif, drôle et stratégique</p>
+  <div class="topbar">
+    <div></div>
+    <div class="lang">
+      FR / <a href="/jedinfoll/index-en.html">EN</a>
+    </div>
+  </div>
   </header>
+
+
   <main>
-    <div class="card">
-      <h2>Boîte Jediñ Foll — Édition Classique</h2>
-      <ul>
-        <li>1–4 joueurs · 10–30 minutes</li>
-        <li>dès 6 ans</li>
-        <li>Objectifs selon le mode : 20, 35, 50 ou 100</li>
-        <li>102 cartes (nombres, opérations, actions)</li>
-      </ul>
-      <div class="price">14,99 €</div>
-      <a href="https://www.paypal.com/ncp/payment/AFCR5XL2VSGK8" class="btn">Acheter France / Europe</a>
-      <a href="https://www.paypal.com/ncp/payment/PYMYEBRDT5WUE" class="btn secondary" style="margin-left:10px;">Acheter DOM/TOM</a>
-      <p style="margin-top:1rem; font-size:0.9rem; color:#ccc;">Livraison sous 15 jours ouvrés</p>
+
+    <!-- ================================= -->
+    <!-- PRÉSENTATION -->
+    <!-- ================================= -->
+
+    <div class="card presentation-card">
+
+      <h2 class="presentation-title">Jediñ Foll</h2>
+
+      <p class="presentation-subtitle">
+        Le jeu de cartes éducatif, drôle et stratégique<br>
+        au format de poche pour des parties folles où que vous soyez !
+      </p>
+
+      <img
+        src="https://raw.githubusercontent.com/jedinfoll/jedinfoll/main/photo-jedinfoll.png"
+        alt="Jeu de cartes Jediñ Foll avec sa pochette et ses cartes"
+        class="presentation-photo"
+      >
+
+      <div class="presentation-infos">
+
+        <div class="presentation-info">
+          <div class="presentation-icon">👥</div>
+          <strong>1 à 4 joueurs</strong>
+          <span>10 à 30 minutes</span>
+        </div>
+
+        <div class="presentation-info">
+          <div class="presentation-icon">🧒</div>
+          <span>À partir de</span>
+          <strong>6 ans</strong>
+        </div>
+
+        <div class="presentation-info">
+          <div class="presentation-icon">⚙️</div>
+          <strong>6 modes de jeu</strong>
+          <span>
+            Atteindre exactement le résultat demandé selon le mode choisi
+          </span>
+        </div>
+
+        <div class="presentation-info">
+          <div class="presentation-icon">🃏</div>
+          <span>Le jeu contient</span>
+          <strong>102 cartes</strong>
+        </div>
+
+      </div>
+
+    </div>
+<!-- ================================= -->
+<!-- COMMANDE -->
+<!-- ================================= -->
+
+<div class="card" id="pricing"
+     style="text-align:center; padding:2.5rem 1.5rem;">
+
+  <!-- GRAND TITRE -->
+  <h2 style="
+      font-size:3.8rem;
+      font-weight:800;
+      color:#2ec4b6;
+      margin:0 0 .5rem;
+      line-height:1.1;">
+    Commande
+  </h2>
+
+  <!-- PRIX EN ROSE FUCHSIA -->
+  <div class="price" style="
+      font-size:2.5rem;
+      font-weight:800;
+      color:#ff1f78;
+      margin:.5rem 0 1.5rem;">
+    À partir de 14,99€
+  </div>
+
+
+  <!-- BOUTON LIVRAISON -->
+  <div class="dropdown-commande"
+       style="display:block; width:100%;">
+
+    <button
+      class="btn"
+      onclick="toggleMenu(event)"
+      style="
+        font-size:1.1rem;
+        border:none;
+        cursor:pointer;
+        width:100%;
+        max-width:420px;
+        justify-content:center;
+        padding:1rem 1.2rem;
+      ">
+      🌍 Commander avec livraison ▼
+    </button>
+
+
+    <!-- MENU DÉROULANT -->
+    <div id="menuCommande"
+         class="menu-commande"
+         style="
+           left:50%;
+           transform:translateX(-50%);
+           width:100%;
+           max-width:420px;
+         ">
+
+      <a href="https://www.paypal.com/ncp/payment/3MJTT9P62VJKY">
+        1 Jediñ Foll + livraison 5 €
+      </a>
+
+      <a href="https://www.paypal.com/ncp/payment/293BU8G4EQYV8">
+        2 Jediñ Foll + livraison 8 €
+      </a>
+
+      <a href="https://www.paypal.com/ncp/payment/XS2BZC9L8349J">
+        3 Jediñ Foll + livraison 8 €
+      </a>
+
+      <a href="https://www.paypal.com/ncp/payment/XML8XN4A74JRC">
+        4 Jediñ Foll + livraison 10 €
+      </a>
+
+      <a href="https://www.paypal.com/ncp/payment/9ME4GC9K43Y5Q">
+        5 Jediñ Foll + livraison 10 €
+      </a>
+
+      <a href="https://www.paypal.com/ncp/payment/TQLQBYCDVCKX6">
+        6 Jediñ Foll + livraison 10 €
+      </a>
+
     </div>
 
-    <div class="card" style="margin-top:2rem;">
-      <h2>QR Code</h2>
-      <p>Scannez pour accéder directement au site :</p>
-      <div class="qr">
-        <a href="https://api.qrserver.com/v1/create-qr-code/?size=2000x2000&data=https://jedinfoll.github.io/jedinfoll/" download>
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https://jedinfoll.github.io/jedinfoll/" alt="QR Code vers Jediñ Foll" style="max-width:300px;">
+  </div>
+
+
+  <!-- BOUTON RETRAIT -->
+  <div style="margin-top:1rem;">
+
+    <a href="https://www.paypal.com/ncp/payment/B3JBUBJQBNQWJ"
+       class="btn"
+       style="
+         background:linear-gradient(90deg,#06d6a0,#ffd166);
+         font-size:1.1rem;
+         width:100%;
+         max-width:420px;
+         justify-content:center;
+         padding:1rem 1.2rem;
+       ">
+      Retrait Guadeloupe et Saint-Malo
+    </a>
+
+  </div>
+
+
+  <!-- INFORMATIONS IMPORTANTES -->
+  <div style="
+      margin:2rem auto 0;
+      max-width:700px;
+      text-align:center;
+      color:#fff;
+      line-height:1.45;
+      font-size:1rem;
+    ">
+
+    <p style="margin:.4rem 0;">
+      📦 <strong>IMPORTANT :</strong>
+      laissez votre adresse + téléphone<br>
+      pour la livraison.
+    </p>
+
+    <p style="margin:1rem 0 0;">
+      📞 <strong>IMPORTANT pour le retrait en GUADELOUPE et SAINT-MALO :</strong><br>
+      votre numéro de téléphone WhatsApp au
+      <strong>07 59 71 74 83</strong><br>
+      est indispensable.
+    </p>
+
+  </div>
+
+</div>
+
+       <!-- ================================= -->
+    <!-- RÈGLES -->
+    <!-- ================================= -->
+
+    <div class="card" id="rules">
+
+      <!-- RÈGLES À IMPRIMER -->
+      <h2 style="margin-top:0;">
+        🖨️ Règles du jeu à imprimer
+      </h2>
+
+      <p style="color:#fff; margin:.5rem 0 1rem;">
+        Téléchargez la version PDF complète des règles.
+      </p>
+
+      <p style="margin:0 0 2rem;">
+        <a class="btn"
+           href="/jedinfoll/regles.pdf"
+           download>
+          📥 Télécharger les règles en PDF
         </a>
+      </p>
+
+<!-- RÈGLES À LIRE SUR TÉLÉPHONE -->
+<h2 style="margin:0 0 .5rem;">
+  📱 Règles du jeu à lire sur téléphone
+</h2>
+
+<p style="color:#fff; margin:.5rem 0 1.3rem;">
+  Consultez les règles directement sur cette page, adaptées pour une lecture facile sur téléphone.
+</p>
+
+
+<!-- OBJECTIF -->
+<details class="rules-block">
+  <summary>🎯 Objectif du jeu</summary>
+
+  <div class="rules-content">
+
+    <p>
+      Le but du jeu est d’atteindre exactement l’objectif de points défini
+      par le mode choisi en construisant des lignes de calcul avec ses cartes.
+    </p>
+
+    <ul>
+      <li><strong>Mode 1 :</strong> atteindre exactement 20 points avec les chiffres 0 à 5 et les signes + et - en une seule ligne.</li>
+      <li><strong>Mode 2 :</strong> atteindre exactement 30 points avec les chiffres 0 à 9 et les signes + et - en une seule ligne.</li>
+      <li><strong>Mode 3 :</strong> atteindre exactement 100 points avec les chiffres 0 à 5 et les signes ×, ÷, + et - en 2 lignes.</li>
+      <li><strong>Mode 4 :</strong> atteindre exactement 100 points avec les chiffres 0 à 9 et les signes ×, ÷, + et - en 2 lignes.</li>
+      <li><strong>Mode Libre :</strong> les joueurs définissent ensemble l’objectif de points et les règles utilisées (73 points, 113 points, etc.).</li>
+      <li><strong>Mode solo :</strong> voir explications à la fin des règles.</li>
+    </ul>
+
+  </div>
+
+  <p class="hint">
+    <strong>Conseil :</strong>
+    Pour plus de fun, limitez-vous à <strong>1 min</strong> maximum
+    de temps de réponse entre chaque joueur.
+  </p>
+
+</details>
+
+
+<!-- MISE EN PLACE -->
+<details class="rules-block">
+
+  <summary>⚙️ Mise en place du jeu</summary>
+
+  <div class="rules-content">
+
+    <ul>
+
+      <li>
+        Avant de commencer la partie, les joueurs retirent du jeu les cartes
+        qui ne sont pas nécessaires pour le mode choisi.
+      </li>
+
+      <li>Chaque joueur reçoit <strong>7 cartes en main</strong>.</li>
+
+      <li>
+        Les cartes restantes sont mélangées et placées face cachée pour former
+        <strong>la pioche</strong>.
+      </li>
+
+      <li>
+        Retournez la première carte de la pioche et placez-la face visible pour
+        former <strong>la défausse</strong>. Cette défausse est visible par tous
+        les joueurs et constitue une option de pioche.
+      </li>
+
+    </ul>
+
+  </div>
+
+</details>
+
+
+<!-- DEROULEMENT -->
+<details class="rules-block">
+
+  <summary>🧠 Déroulement de la partie</summary>
+
+  <div class="rules-content">
+
+    <p>
+      La partie se joue en tours successifs, dans le sens des aiguilles d’une montre.
+    </p>
+
+    <h4>Premier joueur</h4>
+
+    <p>
+      Le joueur qui possède le plus de points avec ses cartes jaunes commence la partie.
+    </p>
+
+    <p>
+      Les joueurs posent petit à petit leur(s) ligne(s) de calcul devant eux.
+    </p>
+
+    <p>
+      Pour créer sa ou ses lignes de calcul, il est possible de poser deux chiffres,
+      un chiffre et un signe, ou deux signes. Peu importe, à condition que toutes
+      les cartes soient utilisées à la fin.
+    </p>
+
+    <h4>À chaque tour</h4>
+
+    <ul>
+
+      <li>
+        Le joueur doit jouer <strong>2 cartes</strong> de sa main :
+
+        <ul>
+          <li>soit pour construire son propre jeu (sa ou ses lignes de calculs posées devant lui),</li>
+          <li>soit dans le jeu d’un adversaire (en remplaçant une carte présente par une carte rose),</li>
+          <li>soit dans la défausse (cartes jugées inutiles pour son objectif).</li>
+        </ul>
+      </li>
+
+      <li>
+        Puis il pioche <strong>2 cartes</strong> afin de revenir à
+        <strong>7 cartes en main</strong> (dans la pioche ou dans la défausse).
+      </li>
+
+    </ul>
+
+    <h4>Actions possibles pendant son tour</h4>
+
+    <p>
+      Le joueur peut défausser une carte de sa ligne de calcul sans que cela
+      ne compte comme une action, afin de réajuster son jeu sans pénalité.
+    </p>
+
+    <p>
+      Il peut également choisir de retirer sa ligne entière ;
+      dans ce cas, il passe son tour.
+    </p>
+
+    <p>
+      <strong>
+        La partie continue jusqu’à ce qu’un joueur atteigne exactement
+        l’objectif du mode choisi dans sa (ses) ligne(s) de calcul.
+      </strong>
+    </p>
+
+  </div>
+
+</details>
+
+
+<!-- MODE 3 ET 4 -->
+<details class="rules-block">
+
+  <summary>Précision des modes 3 & 4</summary>
+
+  <div class="rules-content">
+
+    <p>
+      Dans les modes 3 et 4, les joueurs peuvent réaliser
+      <strong>deux lignes de calcul pour atteindre leur objectif
+      (attention lors des remplacements).</strong>
+    </p>
+
+    <ul>
+      <li>une ligne pour les signes × et ÷,</li>
+      <li>une ligne pour les signes + et -.</li>
+    </ul>
+
+    <p>
+      On ne mélange pas dans la même ligne les signes +, -
+      avec les signes ×, ÷.
+    </p>
+
+    <p>
+      Les résultats des deux lignes s’additionnent, sauf si le résultat de la
+      ligne d'addition et soustractions est négatif : dans ce cas, cette ligne
+      se soustrait du total de la ligne des multiplications et divisions.
+    </p>
+
+    <p>
+      Si une division donne un résultat décimal, on prend l’entier supérieur
+      (Exemple : 3.2 devient 4).
+    </p>
+
+  </div>
+
+</details>
+
+
+<!-- CONDITIONS DE VICTOIRE -->
+<details class="rules-block">
+
+  <summary>🏁 Conditions de victoire</summary>
+
+  <div class="rules-content">
+
+    <p>
+      Le premier joueur à atteindre <strong>exactement</strong> l’objectif de
+      points de son mode de jeu <strong>gagne la partie</strong>.
+    </p>
+
+    <p>
+      Avant d’annoncer sa victoire, un joueur doit être sûr de son total de points.
+      Si une erreur est détectée, chaque autre joueur choisit une carte de la ligne
+      de calcul parmi celles du joueur concerné, la retire de son jeu et la place
+      dans la défausse.
+    </p>
+
+    <p>
+      Un joueur ne peut pas se déclarer vainqueur si des cartes posées sont isolées
+      (non utilisées dans sa ligne de calcul).
+    </p>
+
+  </div>
+
+</details>
+
+
+<!-- PIOCHE ET DÉFAUSSE -->
+<details class="rules-block">
+
+  <summary>🃏 Pioche & Défausse</summary>
+
+  <div class="rules-content">
+
+    <p>
+      <strong>Défausse visible :</strong>
+      La défausse est toujours visible. Les joueurs peuvent choisir de piocher
+      soit dans la pioche, soit dans la défausse.
+    </p>
+
+    <p>
+      <strong>Reconstitution :</strong>
+      Lorsque la pioche est épuisée, retournez la défausse et formez une nouvelle
+      pioche. Le jeu continue jusqu’à ce qu’un joueur atteigne l’objectif de points.
+    </p>
+
+    <p>
+      Toutes les cartes remplacées ou retirées des lignes de calcul vont dans la
+      défausse. Lorsqu'une ligne entière est retirée, le joueur concerné peut choisir
+      l'ordre des cartes posées dans la défausse.
+    </p>
+
+  </div>
+
+</details>
+
+
+<!-- RÉSUMÉ DES CARTES -->
+<details class="rules-block">
+
+  <summary>🧾 Résumé des cartes</summary>
+
+  <div class="rules-content">
+
+    <h3>Cartes jaunes (80)</h3>
+
+    <p>
+      Représentent les chiffres de 0 à 9 et les signes ×, ÷, + et -.
+      Elles peuvent être uniquement utilisées dans son propre jeu et pour remplacer
+      une carte jaune déjà présente dans son jeu.
+      <strong>
+        Les remplacements de cartes se font : signes contre signes et chiffres contre chiffres.
+      </strong>
+    </p>
+
+    <h3>Cartes “Jediñ Foll” (2)</h3>
+
+    <p>
+      Permettent de forcer un adversaire à retirer une ligne de calcul de son jeu.
+      Cela perturbe le jeu des adversaires et ralentit leur progression.
+    </p>
+
+    <h3>Cartes roses (14)</h3>
+
+    <p>
+      Chaque carte rose est un exemplaire unique de chaque chiffre et signe.
+      Elle permet de remplacer une carte (jaune ou rose) dans le jeu d’un adversaire
+      ou dans son propre jeu.
+    </p>
+
+    <p>
+      Une fois posée, l'emplacement rose reste ainsi jusqu'à la fin de la partie
+      ou jusqu’à l’enlèvement de la ligne.
+    </p>
+
+    <p>
+      Les cartes roses sont essentielles pour perturber les plans des autres joueurs
+      et contrôler votre propre jeu. Utilisez-les de manière stratégique.
+    </p>
+
+    <p>
+      <strong>Attention :</strong>
+      en cas de changement de signe il ne faut pas que les deux lignes de calcul
+      soient de mêmes signes et il ne faut pas faire cohabiter deux signes qui ne
+      doivent pas être sur la même ligne.
+    </p>
+
+    <h3>Cartes “Choix Multiples” (6)</h3>
+
+    <p>
+      Permettent de choisir un chiffre ou un signe. Lorsqu’on pose une carte,
+      on annonce sa valeur, qui reste inchangée tant qu’elle demeure dans la ligne
+      de calcul.
+    </p>
+
+  </div>
+
+</details>
+
+
+<!-- MODE SOLO -->
+<details class="rules-block">
+
+  <summary>🎲 Mode solo</summary>
+
+  <div class="rules-content">
+
+    <p>
+      Oui, vous pouvez jouer seul à Jediñ Foll ! Ce mode solo est un défi stratégique
+      où vous devez atteindre l’objectif du mode que vous avez choisi avant d’épuiser
+      la pioche.
+    </p>
+
+    <p>
+      Mélangez <strong>30 cartes</strong> au hasard parmi le jeu complet et placez-les
+      face cachée en tant que pioche. Commencez la partie avec
+      <strong>7 cartes en main</strong>.
+    </p>
+
+    <h3>À chaque tour</h3>
+
+    <ul>
+      <li>Jouez 2 cartes de votre main.</li>
+      <li>Piochez 2 nouvelles cartes pour revenir à 7 en main.</li>
+      <li>Retournez immédiatement la carte suivante de la pioche.</li>
+    </ul>
+
+    <p>
+      <strong>Si c’est une carte rose ou un Jediñ Foll</strong>,
+      appliquez son effet immédiatement.<br>
+      <strong>Si c’est une carte jaune</strong>,
+      placez-la directement dans la défausse et continuez à jouer normalement.
+    </p>
+
+    <p>
+      La défausse est face cachée : récupération de cartes impossible.
+      Vous devez atteindre exactement l’objectif avant que la pioche ne soit vide.
+    </p>
+
+    <p>
+      <strong>
+        Si la pioche est épuisée avant que l’objectif ne soit atteint, vous perdez.
+      </strong>
+    </p>
+
+    <p class="final">
+      <strong>
+        Amusez-vous bien et bonne chance pour vos parties de Jediñ Foll !
+      </strong>
+    </p>
+
+  </div>
+
+</details>
+
+</div>
+     
+      
+    <!-- ================================= -->
+    <!-- VIDÉOS -->
+    <!-- ================================= -->
+
+    <div class="card" id="videos">
+      <h2>🎥 Règles du jeu en vidéo</h2>
+
+      <p class="small">Découvrez Jediñ Foll en action !</p>
+
+      <div style="aspect-ratio:16/9; max-width:100%;">
+
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/pDDwSX38Gsc"
+          title="Jediñ Foll — Démo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+
       </div>
-      <p style="font-size:0.9rem; color:#ccc;">Cliquez sur le QR code pour télécharger en haute définition (PNG).</p>
+
     </div>
+
+
+    <!-- ================================= -->
+    <!-- MENTIONS LÉGALES -->
+    <!-- ================================= -->
+
+    <div class="card mentions">
+
+      <h2>Mentions légales</h2>
+
+      <p>
+        <strong>Éditeur :</strong> Inari —
+        Email :
+        <a href="mailto:jedinfoll@gmail.com">jedinfoll@gmail.com</a>
+      </p>
+
+      <p>
+        <strong>Responsable de publication :</strong>
+        Jessica Lechertier
+      </p>
+
+      <p>
+        <strong>Fabrication :</strong>
+        Créé en Martinique.
+      </p>
+
+      <p>
+        <strong>Hébergement :</strong>
+        GitHub Pages — GitHub Inc., 88 Colin P Kelly Jr St,
+        San Francisco, CA 94107, USA.
+      </p>
+
+      <p>
+        <strong>Propriété intellectuelle :</strong>
+        Contenus © Jediñ Foll. Reproduction interdite sans autorisation.
+      </p>
+
+      <p>
+        <strong>Données personnelles :</strong>
+        Les données collectées (commandes, emails) servent uniquement au traitement
+        des achats et ne sont jamais revendues.
+      </p>
+
+    </div>
+
   </main>
+
+
   <footer>
-    © 2025 Jediñ Foll — Tous droits réservés.
+
+    <div class="social-links">
+
+      <a href="https://www.instagram.com/jedinfoll" target="_blank">
+        Instagram : @jedinfoll
+      </a> |
+
+      <a href="https://www.facebook.com/profite.php?id=61587294022007" target="_blank">
+        Facebook : Jediñ Foll
+      </a> |
+
+      <a href="https://www.tiktok.com/@jedin.foll?_r=1&_t=ZN-93P5J0g869m" target="_blank">
+        TikTok : @jedin.foll
+      </a> |
+
+      <a href="https://www.youtube.com/@Inarigames" target="_blank">
+        YouTube : Inari Games
+      </a>
+
+      <p>
+        📲 Contact WhatsApp :
+        <a href="https://wa.me/33759717483"
+           target="_blank"
+           style="color:#25D366; font-weight:bold;">
+          +33 7 59 71 74 83
+        </a>
+      </p>
+
+    </div>
+
+
+    <!-- Compteur de visites -->
+
+    <p style="margin-top:.6rem;">
+      👁️ Visites :
+
+      <img
+        id="hitPrimary"
+        src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fjedinfoll.github.io%2Fjedinfoll%2F&count_bg=%2300b4d8&title_bg=%231a1a1a&icon=&icon_color=%23ffffff&title=visites&edge_flat=false"
+        alt="Compteur de visites"
+        style="vertical-align:middle"
+        onerror="this.onerror=null;this.src='https://visitor-badge.laobi.icu/badge?page_id=jedinfoll.jedinfoll';"
+      >
+
+      <span id="hitFallback" style="margin-left:.4rem;"></span>
+
+    </p>
+
+    <p>© 2025 Jediñ Foll — Tous droits réservés.</p>
+
   </footer>
+
+
+  <!-- MENU COMMANDE -->
+
+  <script>
+
+    function toggleMenu(e){
+      e.stopPropagation();
+
+      const menu = document.getElementById("menuCommande");
+
+      menu.style.display =
+        menu.style.display === "block" ? "none" : "block";
+    }
+
+    window.addEventListener("click", function(){
+
+      const menu = document.getElementById("menuCommande");
+
+      if(menu){
+        menu.style.display = "none";
+      }
+
+    });
+
+  </script>
+
+
+  <!-- COMPTEUR JS DE SECOURS -->
+
+  <script>
+
+    (function(){
+
+      const txt = document.getElementById('hitFallback');
+
+      if(!txt) return;
+
+      const img = document.getElementById('hitPrimary');
+
+      let done = false;
+
+      function setText(n){
+
+        if(!done){
+
+          txt.textContent =
+            '(' + n.toLocaleString('fr-FR') + ')';
+
+          done = true;
+        }
+
+      }
+
+      img.addEventListener('load',()=>{
+        done = true;
+      });
+
+      setTimeout(async()=>{
+
+        if(done) return;
+
+        try{
+
+          const ns =
+            encodeURIComponent('jedinfoll.github.io');
+
+          const key =
+            encodeURIComponent('site_total');
+
+          const hit =
+            await fetch(
+              `https://api.countapi.xyz/hit/${ns}/${key}`,
+              {cache:'no-store',mode:'cors'}
+            ).then(r=>r.json());
+
+          if(typeof hit.value === 'number'){
+            setText(hit.value);
+            return;
+          }
+
+          const get =
+            await fetch(
+              `https://api.countapi.xyz/get/${ns}/${key}`,
+              {cache:'no-store',mode:'cors'}
+            ).then(r=>r.json());
+
+          if(typeof get.value === 'number'){
+            setText(get.value);
+            return;
+          }
+
+        }catch(e){}
+
+      },1500);
+
+    })();
+
+  </script>
+
 </body>
 </html>
